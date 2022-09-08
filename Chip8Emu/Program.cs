@@ -349,7 +349,7 @@ public class Program
 
                     if (i % (1000) == 0) // 1 k ticks passed == 1 khz
                     {
-                        Console.Title = "Chip8Emu | TimePerKHz: " + (dbg.Elapsed.TotalMilliseconds).ToString("F2") + "ms/KHz | Speed: " + (dbg.Elapsed.TotalMilliseconds).ToString("F2") + "KHz";
+                        Console.Title = "Chip8Emu | TimePerKHz: " + (dbg.Elapsed.TotalMilliseconds).ToString("F2") + "ms/KHz | Speed: " + (1000 / dbg.Elapsed.TotalMilliseconds).ToString("F2") + "KHz";
                         dbg.Restart();
                     }
                 }

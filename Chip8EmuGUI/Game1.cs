@@ -56,7 +56,9 @@ namespace Chip8EmuGUI
                     return (ConsoleKey)key;
                 }catch(Exception ex)
                 {
-                    goto waitagain;
+                    goto waitagain; // required as we get random InvalidOperationException when pressing keys
+                                    // (apparently, the keystate updates so quick that the collection even changes
+                                    // whilst cloning to new list)
                 }
             };
 

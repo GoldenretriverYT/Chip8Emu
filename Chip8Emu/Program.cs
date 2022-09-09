@@ -355,7 +355,7 @@ public class Program
                 }
 
                 sw.Restart();
-                Thread.Sleep((slowdown ? slowdownMs : 1));
+                Thread.Sleep((slowdown ? slowdownMs : (targetKHz < 1 ? (int)(1 / targetKHz) : 1)));
             }
         }).Start();
     }
